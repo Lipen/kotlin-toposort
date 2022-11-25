@@ -18,7 +18,7 @@ dependencies {
     implementation(kotlin("stdlib-jdk8"))
 
     implementation("io.github.microutils:kotlin-logging:3.0.4")
-    runtimeOnly("ch.qos.logback:logback-classic:1.4.4")
+    runtimeOnly("ch.qos.logback:logback-classic:1.4.5")
 
     testImplementation(kotlin("test"))
 }
