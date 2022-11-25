@@ -1,0 +1,22 @@
+= Toposort for Kotlin
+
+> Topological sorting algorithms implemented in Kotlin.
+
+image:https://github.com/Lipen/kotlin-toposort/workflows/Build/badge.svg?branch=master["Build",link="https://github.com/Lipen/kotlin-toposort/actions"]
+image:https://jitpack.io/v/Lipen/kotlin-toposort.svg["JitPack",link="https://jitpack.io/p/Lipen/kotlin-toposort"]
+image:https://hitsofcode.com/github/Lipen/kotlin-toposort["Hits-of-Code",link="https://hitsofcode.com/view/github/Lipen/kotlin-toposort"]
+
+This library contains the following top-level functions:
+
+* `fun <T> toposortKahn(graph: Map<T, List<T>>)`
++
+Returns topologically sorted elements of a graph using link:https://en.wikipedia.org/wiki/Topological_sorting#Kahn's_algorithm[Kahn's algorithm].
+Note that `graph` contains the adjacency list for each vertex.
+One can also interpret `graph` as a Hasse diagram of partial order.
+
+* `fun <T> toposortLayers(deps: Map<T, List<T>>)`
++
+Performs a topological sort by returning elements by layers.
+Note that `deps` represents the dependencies of each element.
+The order of produced elements is "reversed" with respect to `toposortKahn` function.
+One can also interpret `deps` as a Hasse diagram with reversed edges -- the returned layers correspond to anti-chains in partial order.
